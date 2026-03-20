@@ -1,0 +1,277 @@
+品質記録情報
+2026年3月20日 20:04:57
+
+------ ビルド開始(TokotokoNezumi_0, DefaultBuild) ------
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\lbgrx.exe -isa=rxv1 -fpu -lang=c99 -head=runtime,mathf,stdio,stdlib,string,new -output=DefaultBuild\TokotokoNezumi_0.lib -optimize=0 -nologo
+Library Generator Completed
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\ccrx.exe interrupt.c intprg.c resetprg.c sbrk.c usb.c usb_int.c vecttbl.c dbsct.c init.c glob_var.c spi.c misc.c EasterLily.c adjust.c interface.c run.c fast.c DataFlash.c search.c melody.c -isa=rxv1 -fpu -lang=c99 -include=. -debug -g_line -optimize=0 -nologo -output=obj -obj_path=DefaultBuild
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\include\string.h(42):W0520301:Typedef name has already been declared (with same type)
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+spi.c(140):W0520550:Variable "dummy" was set but never used
+spi.c(174):W0520550:Variable "dummy" was set but never used
+spi.c(380):W0520550:Variable "dummy" was set but never used
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+EasterLily.c(103):W0520188:Enumerated type mixed with another type
+EasterLily.c(150):W0520188:Enumerated type mixed with another type
+EasterLily.c(192):W0520188:Enumerated type mixed with another type
+EasterLily.c(233):W0520188:Enumerated type mixed with another type
+EasterLily.c(274):W0520188:Enumerated type mixed with another type
+EasterLily.c(315):W0520188:Enumerated type mixed with another type
+EasterLily.c(356):W0520188:Enumerated type mixed with another type
+EasterLily.c(397):W0520188:Enumerated type mixed with another type
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+DataFlash.c(24):W0520550:Variable "isErr" was set but never used
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+parameters.h(4):W0520014:Extra text after expected end of preprocessing directive
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\rlink.exe -subcommand=DefaultBuild\TokotokoNezumi_0.clnk
+W0561016:The evaluation version of CC-RX V3 is valid for the remaining 5 days. After that, link size limit (128 Kbyte) will be applied. Please consider purchasing the product.
+W0561016:The evaluation version of CC-RX V3 is valid for the remaining 5 days. After that, link size limit (128 Kbyte) will be applied. Please consider purchasing the product.
+Renesas Optimizing Linker Completed
+------ ビルド終了(エラー:0個, 警告:27個)(TokotokoNezumi_0, DefaultBuild) ------
+
+--- CommandFile 1 ---
+DefaultBuild\TokotokoNezumi_0.clnk :
+-library=DefaultBuild\TokotokoNezumi_0.lib
+-input=DefaultBuild\interrupt.obj
+-input=DefaultBuild\intprg.obj
+-input=DefaultBuild\resetprg.obj
+-input=DefaultBuild\sbrk.obj
+-input=DefaultBuild\usb.obj
+-input=DefaultBuild\usb_int.obj
+-input=DefaultBuild\vecttbl.obj
+-input=DefaultBuild\dbsct.obj
+-input=DefaultBuild\init.obj
+-input=DefaultBuild\glob_var.obj
+-input=DefaultBuild\spi.obj
+-input=DefaultBuild\misc.obj
+-input=DefaultBuild\EasterLily.obj
+-input=DefaultBuild\adjust.obj
+-input=DefaultBuild\interface.obj
+-input=DefaultBuild\run.obj
+-input=DefaultBuild\fast.obj
+-input=DefaultBuild\DataFlash.obj
+-input=DefaultBuild\search.obj
+-input=DefaultBuild\melody.obj
+-noprelink
+-output=DefaultBuild\TokotokoNezumi_0.abs
+-list=DefaultBuild\TokotokoNezumi_0.map
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/04,PResetPRG/0FFFC0000,C_1,C_2,C,C$DSEC,C$BSEC,C$INIT,C$VTBL,C$VECT,D_1,D_2,D,P,PIntPRG,W_1,W_2,W,L/0FFFC0100,FIXEDVECT/0FFFFFFD0
+-rom=D=R,D_1=R_1,D_2=R_2
+-nologo
+-end
+-input=DefaultBuild\TokotokoNezumi_0.abs
+-output=DefaultBuild\TokotokoNezumi_0.mot
+-form=stype
+-exit
+
+
+--- SHA1 hash value of output files ---
+C:\Users\tseiy\OneDrive\Desktop\MicroMouse２\MicroMouse\自作マウス\プログラム\イースターリリー_program\08_Search\DefaultBuild\TokotokoNezumi_0.abs: af8e2cc28fdb6db3269572ee484b6a3ad67de87c
+C:\Users\tseiy\OneDrive\Desktop\MicroMouse２\MicroMouse\自作マウス\プログラム\イースターリリー_program\08_Search\DefaultBuild\TokotokoNezumi_0.mot: 33183b06b6267ea8ccaa4f880b05ad93fc7cb368
+
+
+--- システム情報 ---
+*OS バージョン
+ Microsoft Windows 11 Home (-, 10.0.26200, WOW64)
+*言語
+ 日本語 (日本)
+*.NET Framework バージョン
+ Microsoft .NET Framework 4 [.NET 4.8 or later] (533509)
+*WebView2 バージョン
+ 146.0.3856.62
+
+--- アプリケーション情報 ---
+*製品名
+ CS+ for CC
+*パッケージ・バージョン
+ V8.14.00  [02 Jun 2025]
+*バージョン
+ V9.14.00.04 [25 Apr 2025]
+*アセンブリ・バージョン
+ 3.12.10.1
+*拠点情報
+ Japan
+*製品ライセンス
+ 
+*実行場所
+ C:\Program Files (x86)\Renesas Electronics\CS+\CC
+*メモリ使用量
+ *プライベート・ワーキング・セット
+  198 MB
+ *GDIオブジェクト数
+  1514
+ *USERオブジェクト数
+  898
+ *開いているファイル
+  1 editors, 1 files, 22 KB
+
+--- ビルド・ツール・プラグイン情報 ---
+RH850ビルド・ツールCC-RH用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.10.12
+ *DLL ファイル名
+  BuildToolCCRH.dll
+RL78ビルド・ツールCC-RL用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolCCRL.dll
+RXビルド・ツールCC-RX用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  BuildToolCCRX.dll
+RH850ビルド・ツールGHS CCRH850用プラグイン
+ *バージョン
+  V1.11.00.01 [18 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolGHSCCRH850.dll
+
+--- デバッグ・ツール・プラグイン情報 ---
+デバッガ・コレクション・プラグイン
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  2.12.10.1
+ *DLL ファイル名
+  DebugToolCollection.dll
+
+--- その他のプラグイン情報 ---
+RH850用コード生成(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成／端子図プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+デバッグ・コンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+Quick and Effective tool solution - QE
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  1.15.10.16
+ *DLL ファイル名
+  InCarTools.dll
+端子配置プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+プログラム解析プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+IronPythonコンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+エディタ・パネル
+ *バージョン
+  V1.21.00.01 [09 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.0.0
+ *DLL ファイル名
+  SEditor.dll
+スタック見積もりツール(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+アップデート・マネージャ・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+
+デバッグ・ツール共通インタフェース
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  CommonDebuggerInterface.dll
+デバイス情報共通インタフェース
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  3.0.0.0
+ *DLL ファイル名
+  DeviceInformation.dll
+
+--- メイン・プロジェクト情報 ---
+C:\Users\tseiy\OneDrive\Desktop\MicroMouse２\MicroMouse\自作マウス\プログラム\イースターリリー_program\08_Search\TokotokoNezumi_0.mtpj
+マイクロコントローラ情報
+ *R5F5631MDxFM
+  *ファイル名: バージョン
+   RX_Productlist.xml: V3.180000
+   R5F5631MDxFM_common.xml: V3.18.00
+   -: -
+   -: -
+   RX63N.ddi: 1.80A
+  
+
+ビルド・ツール情報
+ *CC-RX
+   * プラグイン(*.dll)のバージョン
+     V8.14.00.05 [07 May 2025]
+   * コンパイラ・パッケージのバージョン
+     V3.07.00
+  
+
+デバッグ・ツール情報
+ *RX シミュレータ
+  Debugger Library V8.14.00.02 [08 May 2025]
+  
+
+その他のツール情報
+ *なし
+
+
