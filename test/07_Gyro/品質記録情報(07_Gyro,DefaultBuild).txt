@@ -1,0 +1,253 @@
+品質記録情報
+2026年3月20日 12:27:03
+
+------ ビルド開始(07_Gyro, DefaultBuild) ------
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\lbgrx.exe -isa=rxv1 -fpu -lang=c99 -head=runtime,mathf,stdio,stdlib,string,new -output=DefaultBuild\07_Gyro.lib -optimize=0 -nologo
+Library Generator Completed
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\ccrx.exe interrupt.c intprg.c resetprg.c sbrk.c usb.c usb_int.c vecttbl.c adjust.c dbsct.c init.c glob_var.c spi.c misc.c 07_Gyro.c -isa=rxv1 -fpu -lang=c99 -include=. -debug -g_line -optimize=0 -nologo -output=obj -obj_path=DefaultBuild
+interrupt.c(218):W0520177:Variable "enc_data_r" was declared but never referenced
+interrupt.c(219):W0520177:Variable "enc_data_l" was declared but never referenced
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\include\string.h(42):W0520301:Typedef name has already been declared (with same type)
+spi.c(140):W0520550:Variable "dummy" was set but never used
+spi.c(174):W0520550:Variable "dummy" was set but never used
+spi.c(380):W0520550:Variable "dummy" was set but never used
+07_Gyro.c(40):W0520223:Function "init_sci" declared implicitly
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RX\V3.07.00\Bin\rlink.exe -subcommand=DefaultBuild\07_Gyro.clnk
+W0561016:The evaluation version of CC-RX V3 is valid for the remaining 5 days. After that, link size limit (128 Kbyte) will be applied. Please consider purchasing the product.
+W0561016:The evaluation version of CC-RX V3 is valid for the remaining 5 days. After that, link size limit (128 Kbyte) will be applied. Please consider purchasing the product.
+Renesas Optimizing Linker Completed
+------ ビルド終了(エラー:0個, 警告:9個)(07_Gyro, DefaultBuild) ------
+
+--- CommandFile 1 ---
+DefaultBuild\07_Gyro.clnk :
+-library=DefaultBuild\07_Gyro.lib
+-input=DefaultBuild\interrupt.obj
+-input=DefaultBuild\intprg.obj
+-input=DefaultBuild\resetprg.obj
+-input=DefaultBuild\sbrk.obj
+-input=DefaultBuild\usb.obj
+-input=DefaultBuild\usb_int.obj
+-input=DefaultBuild\vecttbl.obj
+-input=DefaultBuild\adjust.obj
+-input=DefaultBuild\dbsct.obj
+-input=DefaultBuild\init.obj
+-input=DefaultBuild\glob_var.obj
+-input=DefaultBuild\spi.obj
+-input=DefaultBuild\misc.obj
+-input=DefaultBuild\07_Gyro.obj
+-noprelink
+-output=DefaultBuild\07_Gyro.abs
+-list=DefaultBuild\07_Gyro.map
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/04,PResetPRG/0FFFC0000,C_1,C_2,C,C$DSEC,C$BSEC,C$INIT,C$VTBL,C$VECT,D_1,D_2,D,P,PIntPRG,W_1,W_2,W,L/0FFFC0100,FIXEDVECT/0FFFFFFD0
+-rom=D=R,D_1=R_1,D_2=R_2
+-nologo
+-end
+-input=DefaultBuild\07_Gyro.abs
+-output=DefaultBuild\07_Gyro.mot
+-form=stype
+-exit
+
+
+--- SHA1 hash value of output files ---
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\07_Gyro\DefaultBuild\07_Gyro.abs: 1ab92f942e1b253c3cdbe990e9f8ba4215ac3dde
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\07_Gyro\DefaultBuild\07_Gyro.mot: d81f4528b774b3d621583d9f5490ea0fcddc89d8
+
+
+--- システム情報 ---
+*OS バージョン
+ Microsoft Windows 11 Home (-, 10.0.26200, WOW64)
+*言語
+ 日本語 (日本)
+*.NET Framework バージョン
+ Microsoft .NET Framework 4 [.NET 4.8 or later] (533509)
+*WebView2 バージョン
+ 146.0.3856.62
+
+--- アプリケーション情報 ---
+*製品名
+ CS+ for CC
+*パッケージ・バージョン
+ V8.14.00  [02 Jun 2025]
+*バージョン
+ V9.14.00.04 [25 Apr 2025]
+*アセンブリ・バージョン
+ 3.12.10.1
+*拠点情報
+ Japan
+*製品ライセンス
+ 
+*実行場所
+ C:\Program Files (x86)\Renesas Electronics\CS+\CC
+*メモリ使用量
+ *プライベート・ワーキング・セット
+  196 MB
+ *GDIオブジェクト数
+  1514
+ *USERオブジェクト数
+  896
+ *開いているファイル
+  1 editors, 1 files, 3 KB
+
+--- ビルド・ツール・プラグイン情報 ---
+RH850ビルド・ツールCC-RH用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.10.12
+ *DLL ファイル名
+  BuildToolCCRH.dll
+RL78ビルド・ツールCC-RL用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolCCRL.dll
+RXビルド・ツールCC-RX用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  BuildToolCCRX.dll
+RH850ビルド・ツールGHS CCRH850用プラグイン
+ *バージョン
+  V1.11.00.01 [18 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolGHSCCRH850.dll
+
+--- デバッグ・ツール・プラグイン情報 ---
+デバッガ・コレクション・プラグイン
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  2.12.10.1
+ *DLL ファイル名
+  DebugToolCollection.dll
+
+--- その他のプラグイン情報 ---
+RH850用コード生成(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成／端子図プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+デバッグ・コンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+Quick and Effective tool solution - QE
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  1.15.10.16
+ *DLL ファイル名
+  InCarTools.dll
+端子配置プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+プログラム解析プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+IronPythonコンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+エディタ・パネル
+ *バージョン
+  V1.21.00.01 [09 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.0.0
+ *DLL ファイル名
+  SEditor.dll
+スタック見積もりツール(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+アップデート・マネージャ・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+
+デバッグ・ツール共通インタフェース
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  CommonDebuggerInterface.dll
+デバイス情報共通インタフェース
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  3.0.0.0
+ *DLL ファイル名
+  DeviceInformation.dll
+
+--- メイン・プロジェクト情報 ---
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\07_Gyro\07_Gyro.mtpj
+マイクロコントローラ情報
+ *R5F5631MDxFM
+  *ファイル名: バージョン
+   RX_Productlist.xml: V3.180000
+   R5F5631MDxFM_common.xml: V3.18.00
+   -: -
+   -: -
+   RX63N.ddi: 1.80A
+  
+
+ビルド・ツール情報
+ *CC-RX
+   * プラグイン(*.dll)のバージョン
+     V8.14.00.05 [07 May 2025]
+   * コンパイラ・パッケージのバージョン
+     V3.07.00
+  
+
+デバッグ・ツール情報
+ *RX シミュレータ
+  Debugger Library V8.14.00.02 [08 May 2025]
+  
+
+その他のツール情報
+ *なし
+
+

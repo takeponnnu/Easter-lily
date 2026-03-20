@@ -1,0 +1,213 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:19:04
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;dbsct.c
+;intprg.c
+;resetprg.c
+;sbrk.c
+;04_Motor.c
+;vecttbl.c
+;sci.c
+;i2c.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_main
+		.SECTION	P,CODE
+_main:
+		.STACK	_main=20
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",34
+		MOV.L #00080010H, R1
+		MOV.W #0A50BH, 03EEH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",36
+		MOV.W #0F00H, 18H[R1]
+		MOV.L #00000000H, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",37
+		MOV.B R2, 1AH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",39
+		MOV.B #0FH, 96H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",55
+		MOV.L #21C21211H, 10H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",60
+		MOV.W #0032H, 14H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",61
+		MOV.B #01H, 20H[R1]
+		PUSHM R6-R9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",63
+		MOV.W #0400H, 16H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",72
+		MOV.L #0008C00BH, R14
+		BSET #07H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",74
+		MOV.L #0008C005H, R15
+		BSET #05H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",75
+		MOV.L #0008C00AH, R5
+		BSET #03H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",76
+		MOV.L #0008C00CH, R4
+		BSET #02H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",80
+		MOV.L #0008C11FH, R3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",77
+		BSET #04H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",92
+		MOV.L #0008860AH, R7
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",80
+		BCLR #07H, [R3].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",95
+		MOV.L #00088600H, R8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",81
+		BSET #06H, [R3].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",82
+		MOVU.B 87H[R3], R6
+		BSET #00H, R6
+		AND #0E1H, R6
+		MOV.B R6, 87H[R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",83
+		MOVU.B 93H[R3], R6
+		BSET #00H, R6
+		AND #0E1H, R6
+		MOV.B R6, 93H[R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",84
+		MOV.B #80H, [R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",87
+		MOV.W #0A502H, 03EEH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",88
+		MOV.L [R1], R3
+		MOV.L #000000F8H, R6
+		BCLR #09H, R3
+		MOV.L R3, [R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",89
+		MOV.W #0A500H, 03EEH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",92
+		MOV.B R2, 76H[R7]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",95
+		MOV.L R6, R3
+		AND [R8].UB, R3
+		MOV.L #000000A0H, R1
+		MOV.B R3, [R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",96
+		OR [R8].UB, R1
+		AND #0BFH, R1
+		MOV.B R1, [R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",97
+		MOVU.B 05H[R8], R1
+		MOV.L #000001DFH, R3
+		BSET #01H, R1
+		AND #0F2H, R1
+		MOV.B R1, 05H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",98
+		MOVU.B 05H[R8], R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",106
+		MOV.L #00087098H, R9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",98
+		BSET #04H, R1
+		AND #1FH, R1
+		MOV.B R1, 05H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",99
+		MOV.W R3, 24H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",100
+		MOV.W #0037H, 26H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",101
+		MOV.W R3, 18H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",103
+		MOVU.B 02H[R8], R1
+		BSET #01H, R1
+		AND #0F2H, R1
+		MOV.B R1, 02H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",105
+		BSET #00H, 08H[R8].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",106
+		BSET #00H, 017BH[R9].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",107
+		MOVU.B 0300H[R9], R1
+		OR #0DH, R1
+		AND #0FDH, R1
+		MOV.B R1, 0300H[R9]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",108
+		BCLR #00H, [R9].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",111
+		BSET #01H, [R7].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",113
+		AND 01H[R8].UB, R6
+		MOV.B R6, 01H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",114
+		MOVU.B 01H[R8], R1
+		BSET #06H, R1
+		AND #5FH, R1
+		MOV.B R1, 01H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",115
+		MOVU.B 06H[R8], R1
+		BSET #00H, R1
+		AND #0F1H, R1
+		MOV.B R1, 06H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",116
+		MOVU.B 06H[R8], R1
+		BSET #05H, R1
+		AND #2FH, R1
+		MOV.B R1, 06H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",117
+		MOV.W #0037H, 1CH[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",118
+		MOV.W R3, 1EH[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",119
+		MOV.W #0037H, 28H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",120
+		BSET #04H, 03H[R8].B
+		MOV.L #0008C06EH, R3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",121
+		MOVU.B 03H[R8], R1
+		BSET #01H, R1
+		AND #0F2H, R1
+		MOV.B R1, 03H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",123
+		BSET #01H, 09H[R8].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",124
+		BSET #05H, 017BH[R9].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",125
+		MOVU.B 0304H[R9], R6
+		OR #0CH, R6
+		AND #0FCH, R6
+		MOV.B R6, 0304H[R9]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",126
+		BCLR #00H, 05H[R9].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",128
+		MOV.W R2, 10H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",129
+		MOV.W R2, 12H[R8]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",131
+		BSET #06H, 60H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",132
+		BSET #02H, [R3].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",135
+		BSET #06H, 76H[R7].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",136
+		BSET #07H, 76H[R7].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",139
+		BSET #07H, 20H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",140
+		BSET #05H, 20H[R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",141
+		BCLR #03H, 20H[R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",142
+		BSET #02H, 20H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",143
+		BCLR #04H, 20H[R4].B
+L11:	; bb45
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\04_Motor.c",146
+		BRA L11
+		.END

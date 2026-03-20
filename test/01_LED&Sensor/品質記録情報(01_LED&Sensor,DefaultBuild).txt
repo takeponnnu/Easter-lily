@@ -1,0 +1,209 @@
+品質記録情報
+2026年3月20日 12:06:05
+
+------ ビルド開始(01_LED&Sensor, DefaultBuild) ------
+------ ビルド終了(エラー:0個, 警告:0個)(01_LED&Sensor, DefaultBuild) ------
+
+
+--- SHA1 hash value of output files ---
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\01_LED&Sensor\DefaultBuild\01_LED&Sensor.abs: 8f1149184494b723928d408f9b37e185c6095235
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\01_LED&Sensor\DefaultBuild\01_LED&Sensor.mot: 5499c96d728d76f2bbb9a49e95b2cc830d4ed777
+
+
+--- システム情報 ---
+*OS バージョン
+ Microsoft Windows 11 Home (-, 10.0.26200, WOW64)
+*言語
+ 日本語 (日本)
+*.NET Framework バージョン
+ Microsoft .NET Framework 4 [.NET 4.8 or later] (533509)
+*WebView2 バージョン
+ 146.0.3856.62
+
+--- アプリケーション情報 ---
+*製品名
+ CS+ for CC
+*パッケージ・バージョン
+ V8.14.00  [02 Jun 2025]
+*バージョン
+ V9.14.00.04 [25 Apr 2025]
+*アセンブリ・バージョン
+ 3.12.10.1
+*拠点情報
+ Japan
+*製品ライセンス
+ 
+*実行場所
+ C:\Program Files (x86)\Renesas Electronics\CS+\CC
+*メモリ使用量
+ *プライベート・ワーキング・セット
+  214 MB
+ *GDIオブジェクト数
+  1505
+ *USERオブジェクト数
+  750
+ *開いているファイル
+  1 editors, 1 files, 2 KB
+
+--- ビルド・ツール・プラグイン情報 ---
+RH850ビルド・ツールCC-RH用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.10.12
+ *DLL ファイル名
+  BuildToolCCRH.dll
+RL78ビルド・ツールCC-RL用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolCCRL.dll
+RXビルド・ツールCC-RX用プラグイン
+ *バージョン
+  V8.14.00.01 [10 Apr 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  BuildToolCCRX.dll
+RH850ビルド・ツールGHS CCRH850用プラグイン
+ *バージョン
+  V1.11.00.01 [18 Apr 2025]
+ *アセンブリ・バージョン
+  1.0.0.0
+ *DLL ファイル名
+  BuildToolGHSCCRH850.dll
+
+--- デバッグ・ツール・プラグイン情報 ---
+デバッガ・コレクション・プラグイン
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  2.12.10.1
+ *DLL ファイル名
+  DebugToolCollection.dll
+
+--- その他のプラグイン情報 ---
+RH850用コード生成(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+コード生成／端子図プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+デバッグ・コンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+Quick and Effective tool solution - QE
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  1.15.10.16
+ *DLL ファイル名
+  InCarTools.dll
+端子配置プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+プログラム解析プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+IronPythonコンソール・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+エディタ・パネル
+ *バージョン
+  V1.21.00.01 [09 Apr 2025]
+ *アセンブリ・バージョン
+  1.1.0.0
+ *DLL ファイル名
+  SEditor.dll
+スタック見積もりツール(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+アップデート・マネージャ・プラグイン(-)
+ *バージョン
+  -
+ *アセンブリ・バージョン
+  -
+ *DLL ファイル名
+  -
+
+デバッグ・ツール共通インタフェース
+ *バージョン
+  V8.14.00.02 [08 May 2025]
+ *アセンブリ・バージョン
+  3.12.10.1
+ *DLL ファイル名
+  CommonDebuggerInterface.dll
+デバイス情報共通インタフェース
+ *バージョン
+  V9.14.00.02 [08 Apr 2025]
+ *アセンブリ・バージョン
+  3.0.0.0
+ *DLL ファイル名
+  DeviceInformation.dll
+
+--- メイン・プロジェクト情報 ---
+C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\01_LED&Sensor\01_LED&Sensor.mtpj
+マイクロコントローラ情報
+ *R5F5631MDxFM
+  *ファイル名: バージョン
+   RX_Productlist.xml: V3.180000
+   R5F5631MDxFM_common.xml: V3.18.00
+   -: -
+   -: -
+   RX63N.ddi: 1.80A
+  
+
+ビルド・ツール情報
+ *CC-RX
+   * プラグイン(*.dll)のバージョン
+     V8.14.00.05 [07 May 2025]
+   * コンパイラ・パッケージのバージョン
+     V3.07.00
+  
+
+デバッグ・ツール情報
+ *RX シミュレータ
+  Debugger Library V8.14.00.02 [08 May 2025]
+  
+
+その他のツール情報
+ *なし
+
+

@@ -1,0 +1,57 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:19:04
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;dbsct.c
+;intprg.c
+;resetprg.c
+;sbrk.c
+;04_Motor.c
+;vecttbl.c
+;sci.c
+;i2c.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_sbrk
+		.SECTION	P,CODE
+_sbrk:
+		.STACK	_sbrk=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sbrk.c",45
+		MOV.L #__$brk, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sbrk.c",49
+		MOV.L [R14], R15
+		MOV.L #__$heap_area, R5
+		ADD R15, R1
+		ADD #0400H, R5
+		CMP R5, R1
+		BLEU L12
+L11:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sbrk.c",0
+		MOV.L #0FFFFFFFFH, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sbrk.c",57
+		RTS
+L12:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sbrk.c",54
+		MOV.L R1, [R14]
+		MOV.L R15, R1
+		RTS
+		.SECTION	D,ROMDATA,ALIGN=4
+__$brk:
+		.lword	__$heap_area
+		.SECTION	B,DATA,ALIGN=4
+__$heap_area:
+		.blkl	256
+		.END

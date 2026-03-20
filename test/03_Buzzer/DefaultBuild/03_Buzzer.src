@@ -1,0 +1,70 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:15:36
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;03_Buzzer.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_main
+		.SECTION	P,CODE
+_main:
+		.STACK	_main=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",33
+		MOV.L #0008C00BH, R14
+		BSET #03H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",35
+		MOV.L #0008C00AH, R15
+		BSET #03H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",36
+		MOV.L #0008C00CH, R5
+		BSET #03H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",38
+		MOV.L #0008C005H, R4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",37
+		BSET #07H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",38
+		BSET #05H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",39
+		BSET #04H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",41
+		BSET #03H, 20H[R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",42
+		BSET #03H, 20H[R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",43
+		BSET #07H, 20H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",44
+		BSET #05H, 20H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",45
+		BSET #04H, 20H[R4].B
+L11:	; bb18
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",0
+		MOV.L #00000064H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",52
+		BSET #03H, 20H[R14].B
+		MOV.L R15, R5
+L12:	; bb2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",0
+		SUB #01H, R5
+		BNE L12
+L13:	; bb8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",54
+		BCLR #03H, 20H[R14].B
+L14:	; bb9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\03_Buzzer\03_Buzzer.c",0
+		SUB #01H, R15
+		BNE L14
+		BRA L11
+		.END

@@ -1,0 +1,533 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:19:04
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;dbsct.c
+;intprg.c
+;resetprg.c
+;sbrk.c
+;04_Motor.c
+;vecttbl.c
+;sci.c
+;i2c.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_init_sci
+		.glb	_SCI_putc
+		.glb	_SCI_printf
+		.SECTION	P,CODE
+_init_sci:
+		.STACK	_init_sci=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",12
+		MOV.L #00080014H, R14
+		MOV.W #0A502H, 03EAH[R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",13
+		MOV.L [R14], R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",16
+		MOV.L #0008A020H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",13
+		BCLR #1EH, R15
+		MOV.L R15, [R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",14
+		MOV.W #0A500H, 03EAH[R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",16
+		MOV.B #00H, 02H[R1]
+		MOV.L #000000F0H, R14
+L11:	; bb3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",17
+		TST 02H[R1].UB, R14
+		BNE L11
+L12:	; bb9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",18
+		MOV.L #0008C002H, R14
+		BSET #06H, 20H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",20
+		MOV.L #0008C003H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",19
+		BSET #06H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",23
+		MOV.L #0008C11FH, R5
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",20
+		BCLR #00H, [R15].B
+		MOV.L #000000FCH, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",21
+		BCLR #06H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",22
+		BCLR #00H, 60H[R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",23
+		BCLR #07H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",24
+		BSET #06H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",25
+		MOVU.B 37H[R5], R4
+		OR #0AH, R4
+		AND #0EAH, R4
+		MOV.B R4, 37H[R5]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",26
+		MOVU.B 39H[R5], R4
+		OR #0AH, R4
+		AND #0EAH, R4
+		MOV.B R4, 39H[R5]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",27
+		BCLR #06H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",28
+		BSET #07H, [R5].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",29
+		BSET #00H, 60H[R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",30
+		AND 02H[R1].UB, R2
+		MOV.B R2, 02H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",31
+		MOV.B #00H, [R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",32
+		MOV.B #0F2H, 06H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",33
+		MOV.B #00H, 07H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",34
+		MOV.B #1AH, 01H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",35
+		MOV.B #30H, 02H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",36
+		BSET #06H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",37
+		BSET #05H, 02H[R1].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",38
+		BSET #04H, 02H[R1].B
+		RTS
+_SCI_putc:
+		.STACK	_SCI_putc=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",42
+		MOV.L #001E8480H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",54
+		MOV.L #0008A023H, R15
+L14:	; bb
+		BTST #02H, 01H[R15].B
+		BNE L17
+L15:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",53
+		SUB #01H, R14
+		BNE L14
+L16:	; bb20
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",60
+		RTS
+L17:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",55
+		MOV.B R1, [R15]
+		MOV.L #00000001H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",56
+		RTS
+__$int_to_Dec:
+		.STACK	__$int_to_Dec=8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",63
+		PUSH.L R6
+		MOV.L #00000000H, R14
+L19:	; bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",71
+		CMP #00H, R1
+		MOV.L #00000030H, R15
+		BEQ L21
+L20:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",72
+		MOV.L R1, R15
+		DIVU #0AH, R15
+		MUL #0AH, R15
+		SUB R15, R1, R15
+		OR #30H, R15
+L21:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",73
+		MOV.W R14, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",75
+		DIVU #0AH, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",73
+		MOV.B R15, [R2,R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",70
+		ADD #01H, R14
+		CMP #00H, R1
+		BNE L19
+L22:	; bb28
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",79
+		MOV.W R14, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",80
+		ADD #0FFFFFFFFH, R14, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",79
+		SHLR #01H, R14, R5
+		MOV.L #00000000H, R4
+L23:	; bb63
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",80
+		MOV.W R4, R4
+		MOV.W R5, R3
+		CMP R3, R4
+		BGE L25
+L24:	; bb33
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",82
+		SUB R4, R15, R1
+		MOVU.B [R2,R1], R6
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",81
+		MOVU.B [R4,R2], R3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",82
+		MOV.B R6, [R4,R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",83
+		MOV.B R3, [R2,R1]
+		ADD #01H, R4
+		BRA L23
+L25:	; bb71
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",85
+		MOV.B R15, [R2,R14]
+		RTSD #04H, R6-R6
+__$int_to_Hex:
+		.STACK	__$int_to_Hex=8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",91
+		CMP #00H, R2
+		MOV.L #00000057H, R14
+		PUSH.L R6
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",100
+		STNZ #37H, R14
+		MOV.L #00000000H, R15
+L27:	; bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",105
+		MOV.L R1, R5
+		AND #0FH, R5
+		CMP #0AH, R5
+		MOV.W R15, R15
+		MOV.L R14, R4
+		BGE L29
+L28:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000030H, R2
+		MOV.L R5, R4
+		MOV.L R2, R5
+L29:	; if_break_bb40
+		ADD R5, R4
+		MOV.B R4, [R3,R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",103
+		ADD #01H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",108
+		SHLR #04H, R1
+		BNE L27
+L30:	; bb49
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",112
+		MOV.W R15, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",113
+		ADD #0FFFFFFFFH, R14, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",112
+		SHLR #01H, R14, R5
+		MOV.L #00000000H, R4
+L31:	; bb84
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",113
+		MOV.W R4, R4
+		MOV.W R5, R2
+		CMP R2, R4
+		BGE L33
+L32:	; bb54
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",115
+		SUB R4, R15, R1
+		MOVU.B [R3,R1], R6
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",114
+		MOVU.B [R4,R3], R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",115
+		MOV.B R6, [R4,R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",116
+		MOV.B R2, [R3,R1]
+		ADD #01H, R4
+		BRA L31
+L33:	; bb92
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",119
+		MOV.B R15, [R3,R14]
+		RTSD #04H, R6-R6
+__$PrintFormat:
+		.STACK	__$PrintFormat=56
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",122
+		MOVU.B [R1], R14
+		PUSHM R6-R13
+		ADD #0FFFFFFECH, R0
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",138
+		CMP #30H, R14
+		MOV.L #00000000H, R6
+		BNE L36
+L35:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",140
+		ADD #01H, R1
+		MOV.L #00000001H, R6
+L36:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",142
+		MOVU.B [R1], R7
+		ADD #0FFFFFFD0H, R7
+		CMP #0AH, R7
+		BLTU L38
+L37:	; if_break_bb.if_break_bb43_crit_edge
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R7
+		BRA L39
+L38:	; if_then_bb35
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",144
+		ADD #01H, R1
+L39:	; if_break_bb43
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",147
+		MOV.L R1, R8
+		MOVU.B [R8+], R14
+		CMP #58H, R14
+		BEQ L57
+L40:	; if_break_bb43
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		CMP #63H, R14
+		BEQ L58
+L41:	; if_break_bb43
+		CMP #64H, R14
+		BEQ L48
+L42:	; if_break_bb43
+		CMP #6CH, R14
+		BEQ L52
+L43:	; if_break_bb43
+		CMP #78H, R14
+		BEQ L60
+L44:	; if_break_bb43
+		CMP #75H, R14
+		BEQ L55
+L45:	; if_break_bb43
+		CMP #73H, R14
+		BNE L47
+L46:	; if_break_bb43.switch_break_bb_crit_edge
+		MOV.L #00000000H, R9
+		BRA L51
+L47:	; switch_clause_bb106
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",185
+		MOV.B #00H, [R0]
+		BRA L46
+L48:	; switch_clause_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",149
+		BTST #0FH, R2
+		BEQ L54
+L49:	; if_then_bb54
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",151
+		MOV.W R2, R1
+		NEG R1
+		MOV.L R0, R2
+L50:	; if_then_bb54
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		BSR __$int_to_Dec
+		MOV.L #00000001H, R9
+L51:	; if_then_bb54
+		BRA L61
+L52:	; switch_clause_bb65
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",159
+		CMP #00H, R2
+		BPZ L54
+L53:	; if_then_bb71
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",161
+		NEG R2
+		MOV.L R0, R14
+		MOV.L R2, R1
+		MOV.L R14, R2
+		BRA L50
+L54:	; if_else_bb76
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L R0, R14
+		MOV.L R2, R1
+		MOV.L R14, R2
+		BRA L56
+L55:	; switch_clause_bb81
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",169
+		MOVU.W R2, R1
+		MOV.L R0, R2
+L56:	; switch_clause_bb81
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		BSR __$int_to_Dec
+		BRA L46
+L57:	; switch_clause_bb91
+		MOV.L #00000001H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",175
+		MOV.L R2, R1
+		MOV.L R0, R3
+		MOV.L R14, R2
+		BSR __$int_to_Hex
+		BRA L59
+L58:	; switch_clause_bb97
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",181
+		MOV.B R2, [R0]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",182
+		MOV.B #00H, 01H[R0]
+L59:	; switch_clause_bb97
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		BRA L46
+L60:	; switch_clause_bb87
+		MOV.L #00000000H, R9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",172
+		MOV.L R2, R1
+		MOV.L R0, R3
+		MOV.L R9, R2
+		BSR __$int_to_Hex
+L61:	; switch_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L R9, R10
+L62:	; bb121
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",191
+		MOVU.B R10, R10
+		MOV.L R0, R11
+		MOVU.B [R11,R10], R14
+		CMP #00H, R14
+		BEQ L64
+L63:	; bb118
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		ADD #01H, R10
+		BRA L62
+L64:	; bb131
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",192
+		CMP R10, R7
+		BGT L66
+L65:	; bb131.if_break_bb147_crit_edge
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R7
+		BRA L67
+L66:	; if_then_bb139
+		MOVU.W R7, R7
+		SUB R10, R7
+L67:	; if_break_bb147
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",195
+		CMP #00H, R6
+		MOV.L #0000002DH, R6
+		MOV.L #00000020H, R12
+		BEQ L69
+L68:	; if_then_bb153
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",197
+		CMP #00H, R9
+		MOV.L #00000030H, R12
+L69:	; if_then_bb153
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		BEQ L71
+L70:	; if_then_bb159
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",198
+		MOV.L R6, R1
+		BSR _SCI_putc
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",200
+		SUB #01H, R10
+		MOV.L #00000000H, R9
+L71:	; if_break_bb164
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L #00000000H, R13
+L72:	; bb170
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",203
+		MOV.W R13, R13
+		MOV.W R7, R14
+		CMP R14, R13
+		BGE L74
+L73:	; bb165
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",204
+		MOV.L R12, R1
+		BSR _SCI_putc
+		ADD #01H, R13
+		BRA L72
+L74:	; bb178
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",206
+		CMP #00H, R9
+		BEQ L76
+L75:	; if_then_bb184
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",207
+		MOV.L R6, R1
+		BSR _SCI_putc
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",208
+		SUB #01H, R10
+L76:	; bb211.preheader
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOVU.B R10, R13
+		MOV.L #00000000H, R12
+L77:	; bb211
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",210
+		MOV.W R12, R12
+		CMP R13, R12
+		BGE L80
+L78:	; bb189
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",211
+		MOVU.B [R11,R12], R1
+		BSR _SCI_putc
+		CMP #00H, R1
+		BEQ L80
+L79:	; if_break_bb208
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		ADD #01H, R12
+		BRA L77
+L80:	; bb220
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",216
+		MOV.L R8, R1
+		RTSD #34H, R6-R13
+_SCI_printf:
+		.STACK	_SCI_printf=20
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",219
+		PUSHM R6-R8
+		SUB #04H, R0
+		MOV.L 14H[R0], R6
+		ADD #18H, R0, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",233
+		MOV.L R1, [R0]
+		MOV.L #00000025H, R7
+		MOV.L R6, R8
+L82:	; bb29
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",235
+		MOVU.B [R8], R1
+		CMP #25H, R1
+		BNE L88
+L83:	; bb36
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",246
+		MOVU.B 01H[R8], R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",245
+		ADD #01H, R8, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",246
+		CMP #25H, R2
+		BNE L86
+L84:	; if_then_bb45
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		MOV.L R7, R1
+		BSR _SCI_putc
+		ADD #02H, R8
+L85:	; if_then_bb45
+		BRA L82
+L86:	; if_else_bb49
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",248
+		MOV.L [R0], R8
+		ADD #04H, R8, R2
+		MOV.L R2, [R0]
+		MOV.L [R8], R2
+		BSR __$PrintFormat
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",249
+		CMP #00H, R1
+		MOV.L R1, R8
+		BNE L90
+L87:	; bb69
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",253
+		RTSD #10H, R6-R8
+L88:	; bb6
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",236
+		CMP #00H, R1
+		BEQ L91
+L89:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",241
+		BSR _SCI_putc
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",242
+		ADD #01H, R8
+L90:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",0
+		BRA L85
+L91:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\sci.c",238
+		SUB R6, R8
+		MOV.W R8, R1
+		BRA L87
+		.END

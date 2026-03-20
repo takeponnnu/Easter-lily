@@ -1,0 +1,86 @@
+Renesas Optimizing Linker (W3.07.00 )             20-Mar-2026 12:19:05
+
+*** Options ***
+
+-subcommand=DefaultBuild\04_Motor.clnk
+-library=DefaultBuild\04_Motor.lib
+-input=DefaultBuild\dbsct.obj
+-input=DefaultBuild\intprg.obj
+-input=DefaultBuild\resetprg.obj
+-input=DefaultBuild\sbrk.obj
+-input=DefaultBuild\04_Motor.obj
+-input=DefaultBuild\vecttbl.obj
+-input=DefaultBuild\sci.obj
+-input=DefaultBuild\i2c.obj
+-noprelink
+-output=DefaultBuild\04_Motor.abs
+-list=DefaultBuild\04_Motor.map
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/04,PResetPRG/0FFF80000,C_1,C_2,C,C$DSEC,C$BSEC,C$INIT,C$VTBL,C$VECT,D_1,D_2,D,P,PIntPRG,W_1,W_2,W,L/0FFF80100,FIXEDVECT/0FFFFFFD0
+-rom=D=R,D_1=R_1,D_2=R_2
+-nologo
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+B_1
+                                  00000004  00000013        10   1
+R_1
+                                  00000014  00000014         0   1
+B_2
+                                  00000014  0000001f         c   2
+R_2
+                                  00000020  00000020         0   1
+B
+                                  00000020  0000041f       400   4
+R
+                                  00000420  00000423         4   4
+SU
+                                  00000424  00000523       100   4
+SI
+                                  00000524  00000823       300   4
+PResetPRG
+                                  fff80000  fff80030        31   1
+C_1
+                                  fff80100  fff80100         0   1
+C_2
+                                  fff80100  fff80100         0   1
+C
+                                  fff80100  fff80133        34   4
+C$DSEC
+                                  fff80134  fff80157        24   4
+C$BSEC
+                                  fff80158  fff8016f        18   4
+C$INIT
+                                  fff80170  fff80170         0   1
+C$VTBL
+                                  fff80170  fff80170         0   1
+C$VECT
+                                  fff80170  fff8056f       400   4
+D_1
+                                  fff80570  fff80570         0   1
+D_2
+                                  fff80570  fff80570         0   1
+D
+                                  fff80570  fff80573         4   4
+P
+                                  fff80574  fff80dfa       887   1
+PIntPRG
+                                  fff80dfb  fff80f98       19e   1
+W_1
+                                  fff80f99  fff80f99         0   1
+W_2
+                                  fff80f99  fff80f99         0   1
+W
+                                  fff80f99  fff80f99         0   1
+L
+                                  fff80f9c  fff80fa4         9   4
+$ADDR_C_FFFFFF80
+                                  ffffff80  ffffff83         4   1
+$ADDR_C_FFFFFFA0
+                                  ffffffa0  ffffffaf        10   1
+FIXEDVECT
+                                  ffffffd0  ffffffff        30   4

@@ -1,0 +1,786 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:19:04
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;dbsct.c
+;intprg.c
+;resetprg.c
+;sbrk.c
+;04_Motor.c
+;vecttbl.c
+;sci.c
+;i2c.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_iic_data
+		.glb	_iic_buff
+		.glb	_pic_read_touch
+		.glb	_pic_read_touch_dataL
+		.glb	_pic_read_touch_dataH
+		.glb	_pic_read_touch_th_H
+		.glb	_pic_read_touch_th_L
+		.glb	_init_I2C
+		.glb	_ENC_WHO
+		.glb	_SCI_printf
+		.glb	_ENC_SETTING
+		.glb	_GYRO_SETTING
+		.glb	_IIC_PIC_LED_WRITE
+		.glb	_IIC_PIC_TOUCH_READ
+		.glb	_GYRO_Z_INT
+		.glb	_ACCE_Y_INT
+		.glb	_I2C_START
+		.glb	_I2C_RESTART
+		.glb	_I2C_STOP
+		.glb	_I2C_PUT
+		.glb	_int_i2c_ee
+		.glb	_int_i2c_rx
+		.glb	_int_i2c_tx
+		.glb	_int_i2c_te
+		.SECTION	P,CODE
+_pic_read_touch:
+		.STACK	_pic_read_touch=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",120
+		MOV.L #_iic_data, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",121
+		MOVU.B 08H[R1], R1
+		RTS
+_pic_read_touch_dataL:
+		.STACK	_pic_read_touch_dataL=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",125
+		MOV.L #_iic_data, R1
+		MOVU.B 07H[R1], R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",126
+		RTS
+_pic_read_touch_dataH:
+		.STACK	_pic_read_touch_dataH=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",130
+		MOV.L #_iic_data, R1
+		MOVU.B 06H[R1], R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",131
+		RTS
+_pic_read_touch_th_H:
+		.STACK	_pic_read_touch_th_H=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",135
+		MOV.L #_iic_data, R1
+		MOVU.B 0AH[R1], R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",136
+		RTS
+_pic_read_touch_th_L:
+		.STACK	_pic_read_touch_th_L=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",140
+		MOV.L #_iic_data, R1
+		MOVU.B 0BH[R1], R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",141
+		RTS
+_init_I2C:
+		.STACK	_init_I2C=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",149
+		MOV.L #0008C001H, R14
+		BCLR #06H, 0C0H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",157
+		MOV.L #0008C11FH, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",150
+		BCLR #06H, [R14].B
+		MOV.L #000000E0H, R5
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",151
+		BCLR #07H, 0C0H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",159
+		MOV.L R5, R4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",152
+		BCLR #07H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",164
+		MOV.L #00080018H, R3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",155
+		BCLR #06H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",169
+		MOV.L #00088340H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",156
+		BCLR #07H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",157
+		BCLR #07H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",158
+		BSET #06H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",159
+		AND 2FH[R15].UB, R4
+		MOV.B R4, 2FH[R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",160
+		AND 30H[R15].UB, R5
+		MOV.B R5, 30H[R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",161
+		BCLR #06H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",174
+		MOV.L #000870BFH, R4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",164
+		MOV.W #0A502H, 03E6H[R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",165
+		MOV.L [R3], R5
+		MOV.L #00000000H, R2
+		BCLR #11H, R5
+		MOV.L R5, [R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",166
+		MOV.W #0A500H, 03E6H[R3]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",169
+		BCLR #07H, [R1].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",170
+		BSET #06H, [R1].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",174
+		BCLR #06H, 0158H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",175
+		BCLR #07H, 0158H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",176
+		BCLR #00H, 0159H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",177
+		BCLR #01H, 0159H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",178
+		MOVU.B 02FFH[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 02FFH[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",179
+		MOVU.B 0300H[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0300H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",180
+		MOVU.B 0301H[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0301H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",181
+		MOVU.B 0302H[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0302H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",184
+		MOV.B R2, 07H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",186
+		BCLR #06H, [R1].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",188
+		MOV.B R2, 06H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",190
+		MOV.B #38H, 02H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",191
+		MOV.B #0FDH, 10H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",192
+		MOV.B #0F8H, 11H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",194
+		MOV.B R2, 03H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",195
+		MOV.B R2, 04H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",196
+		BSET #04H, 04H[R1].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",198
+		MOVU.B 02FFH[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 02FFH[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",199
+		MOVU.B 0300H[R4], R5
+		MOV.L #00000080H, R3
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0300H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",200
+		MOVU.B 0301H[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0301H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",201
+		MOVU.B 0302H[R4], R5
+		BSET #01H, R5
+		AND #0F2H, R5
+		MOV.B R5, 0302H[R4]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",203
+		MOV.B #72H, 05H[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",205
+		BCLR #07H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",206
+		BSET #06H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",207
+		MOVU.B 2FH[R15], R5
+		OR #0FH, R5
+		AND #0EFH, R5
+		MOV.B R5, 2FH[R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",208
+		MOVU.B 30H[R15], R5
+		OR #0FH, R5
+		AND #0EFH, R5
+		MOV.B R5, 30H[R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",209
+		BCLR #06H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",211
+		BSET #06H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",212
+		BSET #07H, 60H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",215
+		BCLR #00H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",216
+		BCLR #00H, 01H[R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",219
+		OR [R1].UB, R3
+		MOV.B R3, [R1]
+		RTS
+_ENC_WHO:
+		.STACK	_ENC_WHO=12
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",225
+		BSR _I2C_START
+		MOV.L #0000006CH, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",226
+		BSR _I2C_PUT
+		MOV.L #00000009H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",227
+		BSR _I2C_PUT
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",228
+		BSR _I2C_RESTART
+		MOV.L #0000006DH, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",229
+		BSR _I2C_PUT
+		MOV.L #00088349H, R14
+L18:	; bb2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",231
+		BTST #05H, [R14].B
+		BEQ L18
+L19:	; bb8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",232
+		BTST #04H, [R14].B
+		BEQ L21
+L20:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BCLR #03H, [R14].B
+L21:	; if_break_bb
+		MOV.L #00088344H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",234
+		BSET #06H, [R15].B
+		MOV.L #00088353H, R5
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",235
+		BSET #03H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",236
+		MOVU.B [R5], R4
+L22:	; bb18
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",238
+		BTST #05H, [R14].B
+		BEQ L22
+L23:	; bb26
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",239
+		MOVU.B [R5], R1
+L24:	; bb29
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",241
+		BTST #05H, [R14].B
+		BEQ L24
+L25:	; bb37
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",242
+		BCLR #03H, [R14].B
+		MOV.L #00088341H, R4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",243
+		BSET #03H, [R4].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",244
+		MOVU.B [R5], R5
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",245
+		BCLR #06H, [R15].B
+L26:	; bb40
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",246
+		BTST #03H, [R14].B
+		BEQ L26
+L27:	; bb49
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",247
+		BCLR #04H, [R14].B
+		SUB #08H, R0
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",248
+		BCLR #03H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",250
+		MOV.L #_L10, R14
+		MOV.L R14, [R0]
+		MOV.L R1, 04H[R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		RTS
+_ENC_SETTING:
+		.STACK	_ENC_SETTING=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",257
+		BSR _I2C_START
+		MOV.L #0000006CH, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",258
+		BSR _I2C_PUT
+		MOV.L #00000009H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",259
+		BSR _I2C_PUT
+		MOV.L #00000007H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",260
+		BSR _I2C_PUT
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",261
+		BRA _I2C_STOP
+_GYRO_SETTING:
+		.STACK	_GYRO_SETTING=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",279
+		MOV.L #00088347H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",305
+		MOV.B #0BBH, [R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",308
+		MOV.L #000870BEH, R14
+		BCLR #00H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",309
+		BCLR #00H, 01H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",310
+		BCLR #00H, 02H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",311
+		BCLR #00H, 03H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",312
+		BSET #06H, 0159H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",313
+		BSET #07H, 0159H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",314
+		BSET #00H, 015AH[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",315
+		BSET #01H, 015AH[R14].B
+		RTS
+_IIC_PIC_LED_WRITE:
+		.STACK	_IIC_PIC_LED_WRITE=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",320
+		MOV.L #00088301H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",321
+		BTST #07H, [R14].B
+		BNE L32
+L31:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",324
+		MOV.L #_iic_buff, R2
+		MOV.L #01060008H, [R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",328
+		MOV.B R1, 04H[R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",329
+		MOV.W #0000H, 0EH[R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",332
+		MOV.L #00088341H, R14
+		BCLR #07H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",334
+		BSET #02H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",335
+		BCLR #02H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",336
+		BSET #01H, [R14].B
+L32:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",339
+		RTS
+_IIC_PIC_TOUCH_READ:
+		.STACK	_IIC_PIC_TOUCH_READ=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",342
+		MOV.L #00088301H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",343
+		BTST #07H, [R14].B
+		BNE L41
+L34:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",346
+		MOV.L #_iic_buff, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",348
+		CMP #00H, R1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",346
+		MOV.W #0108H, [R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",348
+		BNE L36
+L35:	; if_then_bb11
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",349
+		MOV.W #0104H, 02H[R2]
+		BRA L38
+L36:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",351
+		CMP #01H, R1
+		BNE L39
+L37:	; if_then_bb17
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",352
+		MOV.W #0102H, 02H[R2]
+L38:	; if_then_bb17
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BRA L40
+L39:	; if_else_bb18
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",355
+		MOV.W #0103H, 02H[R2]
+L40:	; if_break_bb20
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",358
+		MOV.W #0000H, 0EH[R2]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",361
+		MOV.L #00088341H, R14
+		BCLR #07H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",363
+		BSET #02H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",364
+		BCLR #02H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",365
+		BSET #01H, [R14].B
+L41:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",368
+		RTS
+_GYRO_Z_INT:
+		.STACK	_GYRO_Z_INT=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",371
+		MOV.L #00088301H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",372
+		BTST #07H, [R14].B
+		BNE L44
+L43:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",375
+		MOV.L #_iic_buff, R1
+		MOV.L #02470168H, [R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",380
+		MOV.W #0000H, 0EH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",382
+		BSET #01H, [R14].B
+L44:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",383
+		RTS
+_ACCE_Y_INT:
+		.STACK	_ACCE_Y_INT=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",385
+		MOV.L #00088301H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",386
+		MOVU.B [R14], R14
+		RTS
+_I2C_START:
+		.STACK	_I2C_START=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",438
+		MOV.L #00088341H, R14
+L47:	; bb1
+		BTST #07H, [R14].B
+		BNE L47
+L48:	; bb6
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",440
+		BCLR #02H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",441
+		BSET #01H, [R14].B
+		RTS
+_I2C_RESTART:
+		.STACK	_I2C_RESTART=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",446
+		MOV.L #00088341H, R14
+L50:	; bb1
+		BTST #06H, 08H[R14].B
+		BEQ L50
+L51:	; bb7
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",447
+		MOVU.B [R14], R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",448
+		BCLR #02H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",449
+		BSET #02H, [R14].B
+L52:	; bb15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",450
+		BTST #02H, [R14].B
+		BNE L52
+L53:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",452
+		RTS
+_I2C_STOP:
+		.STACK	_I2C_STOP=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",455
+		MOV.L #00088349H, R14
+L55:	; bb1
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",456
+		BTST #06H, [R14].B
+		BEQ L55
+L56:	; bb7
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",458
+		BCLR #03H, [R14].B
+		MOV.L #00088341H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",459
+		BSET #03H, [R15].B
+L57:	; bb9
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",461
+		BTST #03H, [R14].B
+		BEQ L57
+L58:	; bb17
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",463
+		BCLR #04H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",464
+		BCLR #03H, [R14].B
+		RTS
+_I2C_PUT:
+		.STACK	_I2C_PUT=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",467
+		MOV.L #00088349H, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",468
+		BTST #04H, [R2].B
+		BEQ L61
+L60:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BCLR #03H, [R2].B
+L61:	; bb7
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",469
+		BTST #07H, [R2].B
+		BEQ L61
+L62:	; bb14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",470
+		MOV.B R1, 09H[R2]
+		RTS
+_int_i2c_ee:
+		.STACK	_int_i2c_ee=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",480
+		MOV.L #00088349H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",482
+		BTST #03H, [R14].B
+		MOV.L #00088347H, R15
+		MOV.L #_iic_buff, R1
+		BEQ L65
+L64:	; bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BTST #03H, [R15].B
+L65:	; bb
+		BEQ L67
+L66:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",484
+		BCLR #04H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",485
+		BCLR #03H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",487
+		MOV.B #0BBH, [R15]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",490
+		MOV.W #0000H, 0EH[R1]
+L67:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",495
+		BTST #04H, [R14].B
+		BEQ L69
+L68:	; bb25
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BTST #04H, [R15].B
+L69:	; bb25
+		BEQ L71
+L70:	; if_then_bb40
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",496
+		BCLR #04H, [R15].B
+		MOV.L #00088341H, R5
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",498
+		BCLR #03H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",499
+		BSET #03H, [R5].B
+L71:	; if_break_bb41
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",503
+		BTST #02H, [R14].B
+		BEQ L73
+L72:	; bb48
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BTST #02H, [R15].B
+L73:	; bb48
+		BEQ L80
+L74:	; if_then_bb63
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",505
+		BCLR #02H, [R14].B
+		MOV.L #00088352H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",506
+		BCLR #02H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",507
+		BSET #07H, [R15].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",509
+		MOVU.B 0EH[R1], R2
+		CMP #00H, R2
+		BNE L76
+L75:	; bb68
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		MOVU.B 0FH[R1], R2
+		CMP #00H, R2
+L76:	; bb68
+		BNE L79
+L77:	; bb76
+		MOVU.B [R1], R15
+		SHLL #01H, R15
+L78:	; bb76
+		MOV.B R15, [R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",515
+		RTS
+L79:	; bb76.thread
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		MOVU.B [R1], R15
+		SHLL #01H, R15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",512
+		BSET #00H, R15
+		BRA L78
+L80:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",515
+		RTS
+_int_i2c_rx:
+		.STACK	_int_i2c_rx=8
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",521
+		MOV.L #_iic_buff, R1
+		MOVU.B 0FH[R1], R2
+		SUB #04H, R0
+		ADD #01H, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",524
+		MOVU.B R2, R15
+		CMP 03H[R1].UB, R15
+		MOV.L #00088341H, R14
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",521
+		MOV.B R2, 0FH[R1]
+		BNE L83
+L82:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",525
+		BSET #06H, 03H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",526
+		BSET #03H, 03H[R14].B
+L83:	; if_break_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",529
+		MOVU.B 0FH[R1], R2
+		CMP #01H, R2
+		BNE L85
+L84:	; if_then_bb15
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",531
+		MOV.B 12H[R14], 03H[R0]
+		RTSD #04H
+L85:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",532
+		MOVU.B 03H[R1], R3
+		MOVU.B [R1], R15
+		ADD #01H, R3
+		CMP R3, R2
+		MOV.L #_iic_data, R5
+		BNE L96
+L86:	; if_then_bb25
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",533
+		CMP #08H, R15
+		BNE L89
+L87:	; if_then_bb31
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",534
+		MOVU.B 02H[R1], R15
+		CMP #04H, R15
+		BNE L90
+L88:	; if_then_bb37
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",535
+		MOV.B 12H[R14], 08H[R5]
+L89:	; if_then_bb37
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BRA L92
+L90:	; if_else_bb39
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",536
+		CMP #02H, R15
+		BNE L93
+L91:	; if_then_bb45
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",537
+		MOV.B 12H[R14], 06H[R5]
+L92:	; if_then_bb45
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BRA L95
+L93:	; if_else_bb47
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",538
+		CMP #03H, R15
+		BNE L95
+L94:	; if_then_bb53
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",539
+		MOV.B 12H[R14], 07H[R5]
+L95:	; if_break_bb58
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",542
+		BCLR #03H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",543
+		BSET #03H, [R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",544
+		BCLR #06H, 03H[R14].B
+		RTSD #04H
+L96:	; if_else_bb59
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",547
+		CMP #08H, R15
+		BNE L98
+L97:	; if_then_bb65
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",548
+		MOV.B 12H[R14], 06H[R5]
+L98:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",578
+		RTSD #04H
+_int_i2c_tx:
+		.STACK	_int_i2c_tx=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",584
+		MOV.L #_iic_buff, R1
+		MOVU.B 0EH[R1], R2
+		MOV.L #00088347H, R14
+		ADD #01H, R2, R3
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",585
+		CMP #00H, R2
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",584
+		MOV.B R3, 0EH[R1]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",585
+		BNE L101
+L100:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",587
+		MOV.B 02H[R1], 0BH[R14]
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",588
+		MOVU.B 01H[R1], R1
+		CMP #01H, R1
+		BEQ L108
+		BRA L109
+L101:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",591
+		MOVU.B R3, R15
+		CMP #02H, R15
+		BNE L104
+L102:	; if_then_bb18
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",592
+		MOVU.B 01H[R1], R15
+		CMP #00H, R15
+		BNE L105
+L103:	; if_then_bb24
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",593
+		MOV.B 04H[R1], 0BH[R14]
+		RTS
+L104:	; if_else_bb27
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",600
+		MOVU.B 03H[R1], R2
+		ADD #02H, R2
+		CMP R2, R15
+L105:	; if_else_bb27
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BNE L107
+L106:	; if_then_bb36
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",601
+		MOVU.B 01H[R1], R1
+		CMP #00H, R1
+L107:	; if_then_bb36
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",0
+		BNE L109
+L108:	; if_then_bb42
+		BSET #06H, [R14].B
+L109:	; return
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",605
+		RTS
+_int_i2c_te:
+		.STACK	_int_i2c_te=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",608
+		MOV.L #_iic_buff, R1
+		MOVU.B 01H[R1], R1
+		MOV.L #00088341H, R14
+		CMP #00H, R1
+		BNE L112
+L111:	; if_then_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",609
+		BSET #03H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",610
+		BCLR #03H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",611
+		BSET #03H, [R14].B
+		RTS
+L112:	; if_else_bb
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",613
+		BCLR #02H, 08H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",614
+		BSET #02H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",615
+		BCLR #06H, 06H[R14].B
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\04_Motor\i2c.c",617
+		BSET #02H, [R14].B
+		RTS
+		.SECTION	L,ROMDATA,ALIGN=4
+_L10:
+		.byte	"who=%d"
+		.byte	0AH,0DH,00H
+		.SECTION	B_2,DATA,ALIGN=2
+_iic_data:
+		.blkw	6
+		.SECTION	B_1,DATA
+_iic_buff:
+		.blkb	16
+		.END

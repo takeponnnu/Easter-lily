@@ -1,0 +1,41 @@
+;RX Family C/C++ Compiler (V3.07.00  [06 Dec 2024])  20-Mar-2026 12:04:36
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;dbsct.c
+;intprg.c
+;resetprg.c
+;sbrk.c
+;01_LED&Sensor.c
+;vecttbl.c
+;init.c
+;usb.c
+;usb_int.c
+;adjust.c
+;interrupt.c
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-g_line
+;-nologo
+;-output=obj
+;-obj_path=DefaultBuild
+
+		.glb	_main
+		.glb	_init_all
+		.glb	_view_adc
+		.SECTION	P,CODE
+_main:
+		.STACK	_main=4
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\01_LED&Sensor\01_LED&Sensor.c",33
+		BSR _init_all
+		.LINE  "C:\Users\tseiy\OneDrive\Desktop\Easter-lily\program\test\01_LED&Sensor\01_LED&Sensor.c",34
+		BRA _view_adc
+		.END
