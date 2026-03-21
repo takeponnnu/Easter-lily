@@ -12,7 +12,6 @@
 #include <machine.h>
 #include <stdarg.h>
 #include "iodefine.h"
-#include "sci.h"
 #include "glob_var.h"
 
 int gyro_data = 0;

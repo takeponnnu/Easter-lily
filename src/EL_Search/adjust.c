@@ -11,7 +11,6 @@
 //#include "typedefine.h"
 #include "iodefine.h"
 #include "mathf.h"
-#include "sci.h"
 #include "init.h"
 #include "spi.h"
 //#include "i2c.h"

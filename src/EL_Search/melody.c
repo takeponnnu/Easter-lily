@@ -1,6 +1,5 @@
 #include "iodefine.h"
 #include "mathf.h"
-#include "sci.h"
 #include "init.h"
 #include "parameters.h"
 #include "glob_var.h"
@@ -55,7 +54,6 @@ void melody( int x ){
 			tone(NOTE_C6,500);
 			break;
 	}
-	
 }
 
 void beep( int x ){

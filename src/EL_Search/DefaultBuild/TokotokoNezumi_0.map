@@ -1,7 +1,8 @@
-Renesas Optimizing Linker (W3.07.00 )             20-Mar-2026 20:04:56
+Renesas Optimizing Linker (W3.03.00 )             21-Mar-2026 14:59:21
 
 *** Options ***
 
+-MAKEUD=DefaultBuild\TokotokoNezumi_0.lk.ud
 -subcommand=DefaultBuild\TokotokoNezumi_0.clnk
 -library=DefaultBuild\TokotokoNezumi_0.lib
 -input=DefaultBuild\interrupt.obj
@@ -79,17 +80,17 @@ D_2
 D
                                   fffc08dc  fffc0977        9c   4
 P
-                                  fffc0978  fffcc9a9      c032   1
+                                  fffc0978  fffcd665      ccee   1
 PIntPRG
-                                  fffcc9aa  fffccba7       1fe   1
+                                  fffcd666  fffcd863       1fe   1
 W_1
-                                  fffccba8  fffccbaf         8   1
+                                  fffcd864  fffcd86b         8   1
 W_2
-                                  fffccbb0  fffccc2d        7e   2
+                                  fffcd86c  fffcd90b        a0   2
 W
-                                  fffccc30  fffccc30         0   4
+                                  fffcd90c  fffcd90c         0   4
 L
-                                  fffccc30  fffccf39       30a   4
+                                  fffcd90c  fffcdc15       30a   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 $ADDR_C_FFFFFFA0

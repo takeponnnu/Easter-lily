@@ -6,7 +6,6 @@
 #include "glob_var.h"
 #include "run.h"
 #include "interface.h"
-#include "sci.h"
 
 extern int get_nextdir(int x, int y, int mask, t_direction *dir);
 

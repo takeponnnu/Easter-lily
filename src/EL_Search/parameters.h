@@ -4,10 +4,10 @@
 #include "static_parameters.h"　
 
 //物理的なパラメータ
-#define TIRE_DIAMETER	(25.)				//タイヤの直径	[mm]
+#define TIRE_DIAMETER	(24.65)				//タイヤの直径	[mm]
 #define TIRE_RADIUS	(TIRE_DIAMETER/2.0)			//タイヤの半径	[mm]
-#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*5)	//エンコーダ1パルスあたりに進む距離[mm](TIRE_DIAMETER*PI)/(ENC_MAX) ギア比もかけてる 10:32 = 1:5
-#define ENC_RES_MAX	(2048)				// 車輪が1回転する時に数えられるパルス量 4096*(32/10)=13107.2
+#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*5)	//エンコーダ1パルスあたりに進む距離[mm](TIRE_DIAMETER*PI)/(ENC_MAX) ギア比もかけてる 8:40 = 1:5
+#define ENC_RES_MAX	(2048)				// 軸が1回転する時に数えられるパルス量 512*4逓倍=2048
 #define ENC_RES_HALF	(1024)
 
 #define V_ref		3.8				//モータ制御の基準電圧		HMから変えてない
@@ -67,7 +67,7 @@
 #define GOAL_Y	8		//ゴール座標(y)
 
 //決定用センサパラメータ
-#define	SEN_DECISION	1500	//メニュー決定用の光センサ閾値
+#define	SEN_DECISION	2000	//メニュー決定用の光センサ閾値
 
 #define _PARAMETER
 

@@ -50,24 +50,13 @@ void init_clock(void)
 void init_io(void)
 {
 	//LED
-	PORTA.PDR.BIT.B3 = IO_OUT;//LED0 red
-	PORTC.PDR.BIT.B3 = IO_OUT;//LED1
-	PORTB.PDR.BIT.B7 = IO_OUT;//LED2
-	PORT5.PDR.BIT.B5 = IO_OUT;//LED3
-	PORT5.PDR.BIT.B4 = IO_OUT;//LED4
-	//PORTA.PDR.BIT.B3 = IO_OUT;//BLED1
+	PORTB.PDR.BIT.B0 = IO_OUT;//LED0 Blue
+	PORTA.PDR.BIT.B0 = IO_OUT;//LED1 Blue
+	PORTB.PDR.BIT.B1 = IO_OUT;//LED2 Blue
+	PORT0.PDR.BIT.B5 = IO_OUT;//LED3 Blue
 
 	//Sensor
-	PORTB.PDR.BIT.B6 = IO_OUT;//S_LED_
-	PORT0.PDR.BIT.B5 = IO_OUT;//SLED_R
-	PORT2.PDR.BIT.B7 = IO_OUT;//SLED_FL
-	PORTB.PDR.BIT.B5 = IO_OUT;//SLED_FR
-/*	
-	// switch
-	PORT3.PIDR.BIT.B5 = 0;
-	PORT0.PIDR.BIT.B5 = 0;
-	PORTB.PIDR.BIT.B5 = 0;
-*/
+	PORTB.PDR.BIT.B6 = IO_OUT;//S_LED
 	//MOT_POWER
 	//PORT1.PDR.BIT.B5 = IO_OUT;//motor Enable
 	PORTB.PDR.BIT.B1 = 1;//motor SLEEP (STBY)
@@ -422,34 +411,18 @@ void init_all(void)
 	int i;
 	init_clock();			//CPUの動作周波数を設定
 	init_io();			//I/O(Input / Output)ポートを設定
-	//init_cmt();			//CMT(Compare Match Timer)を設定(センサ割り込み、時間待ち用。)
 	init_mtu();			//MTU(Multi Function Timer Pulse Unit)
 	init_adc();			//ADC(Analog Digital Converter)初期化
-//	init_sci();			//SCI(Serial Communication Interface)初期化
 	init_usb();
 	init_spi_gyro();
-	//hw_dflash_init();
 	init_parameters();	//パラメータの初期化
 	init_maze();		//迷路情報の初期化
 	
 	//Gyro初期設定
-	//preprocess_spi_gyro_2byte(0x0681);		//ジャイロリセット
 	preprocess_spi_gyro_2byte(0x4E1F);		//スリープモード解除
 	for(i = 0; i < 100*1000*10; i++);
-	//preprocess_spi_gyro_2byte(0x0601);		//Low Power Mode OFF
 	preprocess_spi_gyro_2byte(0x4F06);		//SPIを有効にする
 	for(i = 0; i < 100*1000*10; i++);
-
-	//ジャイロの設定
-	//preprocess_spi_gyro_2byte(0x7F20);		//User Bank2に変更
-	//preprocess_spi_gyro_2byte(0x1B18);		//フルスケールを2000dpsに
-	//for(i = 0; i < 100*1000*10; i++);
-	//preprocess_spi_gyro_2byte(0x0107);		//Range を最大2000dpsへ変更
-	//for(i = 0; i < 100*1000*10; i++);
-	//preprocess_spi_gyro_2byte(0x7F00);		//User Bank0に変更
-	//for(i = 0; i < 100*1000*10; i++);
-
-	//preprocess_spi_gyro_2byte(0x0621);		//ジャイロスタート
 	
 	//エンコーダスタート
 	MTU.TSTR.BIT.CST2 = 1;	//タイマスタート

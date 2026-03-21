@@ -1,7 +1,6 @@
 #include "iodefine.h"
 #include "usb_define.h"
 #include "usb_int.h"
-#include "sci.h"
 
 
 

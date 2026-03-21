@@ -1,0 +1,98 @@
+Renesas Optimizing Linker (W2.08.00 )             19-Jun-2022 14:56:47
+
+*** Options ***
+
+-subcommand=DefaultBuild\TokotokoNezumi.clnk
+-library=DefaultBuild\TokotokoNezumi.lib
+-input=DefaultBuild\interrupt.obj
+-input=DefaultBuild\intprg.obj
+-input=DefaultBuild\resetprg.obj
+-input=DefaultBuild\sbrk.obj
+-input=DefaultBuild\usb.obj
+-input=DefaultBuild\usb_int.obj
+-input=DefaultBuild\vecttbl.obj
+-input=DefaultBuild\dbsct.obj
+-input=DefaultBuild\init.obj
+-input=DefaultBuild\glob_var.obj
+-input=DefaultBuild\spi.obj
+-input=DefaultBuild\misc.obj
+-input=DefaultBuild\TokotokoNezumi.obj
+-input=DefaultBuild\adjust.obj
+-input=DefaultBuild\interface.obj
+-input=DefaultBuild\run.obj
+-input=DefaultBuild\fast.obj
+-input=DefaultBuild\DataFlash.obj
+-input=DefaultBuild\search.obj
+-input=DefaultBuild\melody.obj
+-noprelink
+-output=DefaultBuild\TokotokoNezumi.abs
+-list=DefaultBuild\TokotokoNezumi.map
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/04,PResetPRG/0FFFC0000,C_1,C_2,C,C$DSEC,C$BSEC,C$INIT,C$VTBL,C$VECT,D_1,D_2,D,P,PIntPRG,W_1,W_2,W,L/0FFFC0100,FIXEDVECT/0FFFFFFD0
+-rom=D=R,D_1=R_1,D_2=R_2
+-nologo
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+B_1
+                                  00000004  000003cd       3ca   1
+R_1
+                                  000003ce  000004dc       10f   1
+B_2
+                                  000004de  000007e7       30a   2
+R_2
+                                  000007e8  00000821        3a   2
+B
+                                  00000824  0000f957      f134   4
+R
+                                  0000f958  0000f9f3        9c   4
+SU
+                                  0000f9f4  0000faf3       100   4
+SI
+                                  0000faf4  0000fdf3       300   4
+PResetPRG
+                                  fffc0000  fffc0030        31   1
+C_1
+                                  fffc0100  fffc0100         0   1
+C_2
+                                  fffc0100  fffc0100         0   1
+C
+                                  fffc0100  fffc0353       254   4
+C$DSEC
+                                  fffc0354  fffc0377        24   4
+C$BSEC
+                                  fffc0378  fffc038f        18   4
+C$INIT
+                                  fffc0390  fffc0390         0   1
+C$VTBL
+                                  fffc0390  fffc0390         0   1
+C$VECT
+                                  fffc0390  fffc078f       400   4
+D_1
+                                  fffc0790  fffc089e       10f   1
+D_2
+                                  fffc08a0  fffc08d9        3a   2
+D
+                                  fffc08dc  fffc0977        9c   4
+P
+                                  fffc0978  fffcd650      ccd9   1
+PIntPRG
+                                  fffcd651  fffcd84e       1fe   1
+W_1
+                                  fffcd84f  fffcd856         8   1
+W_2
+                                  fffcd858  fffcd8f7        a0   2
+W
+                                  fffcd8f8  fffcd8f8         0   4
+L
+                                  fffcd8f8  fffcdc01       30a   4
+$ADDR_C_FFFFFF80
+                                  ffffff80  ffffff83         4   1
+$ADDR_C_FFFFFFA0
+                                  ffffffa0  ffffffaf        10   1
+FIXEDVECT
+                                  ffffffd0  ffffffff        30   4

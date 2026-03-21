@@ -279,7 +279,7 @@ void int_cmt0(void)
 	timer++;
 	cnt++;
 	
-}	
+}		
 
 void int_cmt1(void)		//ƒZƒ“ƒT“Ç‚İ‚İ—p‚è‚İ
 {

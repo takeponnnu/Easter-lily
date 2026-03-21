@@ -1,0 +1,232 @@
+;RX Family C/C++ Compiler (V2.08.00 [30 Nov 2017])  06-Nov-2021 02:58:34
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;-output=src=HM_StarterKit.src
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-nologo
+;HM_StarterKit.c
+
+		.glb	_main
+		.glb	_init_sci
+		.glb	_SCI_printf
+		.SECTION	P,CODE
+_main:
+		.STACK	_main=44
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",26
+		PUSHM R6-R13
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",33
+		MOV.L #00080010H, R6
+		MOV.W #0A50BH, 03EEH[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",35
+		MOV.W #0F00H, 18H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",36
+		MOV.B #00H, 1AH[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",38
+		MOV.B #0FH, 96H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",54
+		MOV.L #21C21211H, 10H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",59
+		MOV.W #0032H, 14H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",60
+		MOV.B #01H, 20H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",62
+		MOV.W #0400H, 16H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",70
+		MOV.L #0008C00AH, R7
+		BSET #03H, [R7].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",71
+		MOV.L #0008C001H, R8
+		BSET #05H, [R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",72
+		BSET #04H, [R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",73
+		MOV.L #0008C003H, R9
+		BSET #01H, [R9].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",79
+		BSR _init_sci
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",86
+		MOV.W #0A502H, 03EEH[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",87
+		MOV.L [R6], R14
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",90
+		MOV.L #0008C00EH, R15
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",87
+		BCLR #11H, R14
+		MOV.L R14, [R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",88
+		MOV.W #0A500H, 03EEH[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",90
+		BCLR #07H, [R15].B
+		MOV.L #0008C064H, R14
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",93
+		BSET #06H, [R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",94
+		BSET #02H, [R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",95
+		BSET #01H, [R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",96
+		BSET #00H, [R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",97
+		BCLR #01H, 60H[R15].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",99
+		MOV.L #0008C11FH, R14
+		MOV.B #00H, [R14]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",100
+		MOV.B #40H, [R14]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",101
+		BSET #07H, 47H[R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",102
+		BSET #07H, 43H[R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",103
+		BSET #07H, 42H[R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",104
+		BSET #07H, 41H[R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",105
+		BSET #07H, 92H[R14].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",106
+		MOV.B #80H, [R14]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",110
+		MOV.L #00089000H, R6
+		MOVU.B [R6], R14
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",132
+		MOV.L #_L13, R13
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",110
+		OR #0CH, R14
+		MOV.B R14, [R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",111
+		BCLR #06H, [R6].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",138
+		MOV.L #_L14, R12
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",142
+		MOV.L #_L15, R11
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",143
+		MOV.L #_L16, R10
+L18:	; bb59
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",115
+		MOV.W #0047H, 04H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",117
+		BSET #03H, 20H[R7].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",118
+		BSET #05H, 20H[R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",119
+		BSET #04H, 20H[R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",120
+		BSET #01H, 20H[R9].B
+		MOV.L #000009C4H, R14
+L19:	; bb7
+		SUB #01H, R14
+		BNE L19
+L20:	; bb14
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",122
+		BSET #07H, [R6].B
+L21:	; bb16
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",123
+		BTST #07H, [R6].B
+		BNE L21
+L22:	; bb23
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",124
+		BCLR #03H, 20H[R7].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",125
+		BCLR #05H, 20H[R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",126
+		BCLR #04H, 20H[R8].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",127
+		BCLR #01H, 20H[R9].B
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",129
+		MOVU.W 2CH[R6], R1
+		SUB #08H, R0
+		MOV.L R1, 04H[R0]
+		MOV.L #_L10, R1
+		MOV.L R1, [R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",130
+		MOVU.W 24H[R6], R1
+		SUB #08H, R0
+		MOV.L R1, 04H[R0]
+		MOV.L #_L11, R1
+		MOV.L R1, [R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",131
+		MOVU.W 22H[R6], R1
+		SUB #08H, R0
+		MOV.L R1, 04H[R0]
+		MOV.L #_L12, R1
+		MOV.L R1, [R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",132
+		MOVU.W 20H[R6], R1
+		SUB #08H, R0
+		MOV.L R1, 04H[R0]
+		MOV.L R13, [R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",134
+		MOV.W #0200H, 04H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",135
+		BSET #07H, [R6].B
+L23:	; bb37
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",136
+		BTST #07H, [R6].B
+		BNE L23
+L24:	; bb44
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",138
+		MOVU.W 32H[R6], R1
+		SUB #08H, R0
+		MOV.L R1, 04H[R0]
+		MOV.L R12, [R0]
+		BSR _SCI_printf
+		ADD #08H, R0
+		MOV.L #00989680H, R14
+L25:	; bb48
+		SUB #01H, R14
+		BNE L25
+L26:	; bb56
+		SUB #04H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",142
+		MOV.L R11, [R0]
+		BSR _SCI_printf
+		ADD #04H, R0
+		SUB #04H, R0
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\HM_StarterKit.c",143
+		MOV.L R10, [R0]
+		BSR _SCI_printf
+		ADD #04H, R0
+		BRA L18
+		.SECTION	L,ROMDATA,ALIGN=4
+_L10:
+		.byte	"sensor_fr = %d"
+		.byte	0AH,0DH,00H
+_L11:
+		.byte	"sensor_r = %d"
+		.byte	0AH,0DH,00H
+_L12:
+		.byte	"sensor_l = %d"
+		.byte	0AH,0DH,00H
+_L13:
+		.byte	"sensor_fl = %d"
+		.byte	0AH,0DH,00H
+_L14:
+		.byte	"V_BAT = %d"
+		.byte	0AH,0DH,00H
+_L15:
+		.byte	1BH
+		.byte	"[2J"
+		.byte	00H
+_L16:
+		.byte	1BH
+		.byte	"[0;0H"
+		.byte	00H
+		.END

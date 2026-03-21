@@ -1,0 +1,124 @@
+;RX Family C/C++ Compiler (V2.08.00 [30 Nov 2017])  11-Nov-2021 14:12:01
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;-output=src=usb_int.src
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-nologo
+;usb_int.c
+
+		.glb	_usb_gcstd_IntMsg
+		.glb	_usb_gcstd_IntMsgCnt
+		.glb	_usb_gcstd_IntMsgD0fifo
+		.glb	_usb_cpu_usb_int_hand_r
+		.glb	_usb_cstd_GetUsbIpAdr
+		.glb	_usb_cstd_InterruptClock
+		.glb	_usb_cstd_is_host_mode
+		.glb	_usb_pstd_InterruptHandler
+		.glb	_usb_cstd_iSndMsg
+		.glb	_usb_cpu_d0fifo_int_hand
+		.glb	_usb_creg_clr_dreqe
+		.glb	_usb_cpu_d0fifo_stop_dma
+		.SECTION	P,CODE
+_usb_cpu_usb_int_hand_r:
+		.STACK	_usb_cpu_usb_int_hand_r=20
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",14
+		PUSHM R6-R9
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",18
+		MOV.L #_usb_gcstd_IntMsgCnt, R6
+		MOVU.W [R6], R7
+		MOV.L #_usb_gcstd_IntMsg, R8
+		MOV.L R7, R9
+		MUL #2CH, R9
+		ADD R8, R9
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",19
+		MOV.W #0000H, 0CH[R9]
+		MOV.L #00000000H, R1
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",20
+		BSR _usb_cstd_GetUsbIpAdr
+		MOV.L R1, 08H[R9]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",22
+		MOV.L R9, R1
+		BSR _usb_cstd_InterruptClock
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",25
+		MOV.L R9, R1
+		BSR _usb_cstd_is_host_mode
+		CMP #00H, R1
+		BNE L12
+L11:	; if_then_bb
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",31
+		MOV.L R9, R1
+		BSR _usb_pstd_InterruptHandler
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",32
+		MUL #2CH, R7
+		ADD R7, R8
+		MOV.L #00000000H, [R8]
+		MOV.L #00000000H, R1
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",34
+		MOV.L R9, R2
+		BSR _usb_cstd_iSndMsg
+L12:	; if_break_bb30
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",45
+		MOV.W [R6], R14
+		ADD #01H, R14
+		MOV.W R14, [R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",46
+		MOVU.W R14, R14
+		CMP #0FH, R14
+		BNE L14
+L13:	; if_then_bb38
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",48
+		MOV.W #0000H, [R6]
+L14:	; return
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",51
+		RTSD #10H, R6-R9
+_usb_cpu_d0fifo_int_hand:
+		.STACK	_usb_cpu_d0fifo_int_hand=8
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",61
+		PUSH.L R6
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",68
+		MOV.L #_usb_gcstd_IntMsgD0fifo, R6
+		MOV.L #00000000H, R1
+		MOV.L R1, [R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",69
+		MOV.W R1, 06H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",70
+		MOV.W R1, 20H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",71
+		MOV.W R1, 0CH[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",72
+		BSR _usb_cstd_GetUsbIpAdr
+		MOV.L R1, 08H[R6]
+		MOV.L #00000002H, R2
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",74
+		MOV.L R6, R1
+		BSR _usb_creg_clr_dreqe
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",75
+		MOV.L R6, R1
+		BSR _usb_cpu_d0fifo_stop_dma
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",77
+		MOV.L R6, R1
+		BSR _usb_cstd_is_host_mode
+		CMP #00H, R1
+		BNE L17
+L16:	; if_then_bb
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",82
+		MOV.W #0144H, 04H[R6]
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",84
+		MOV.L R6, R2
+		MOV.L #00000000H, R1
+		POP R6
+		BRA _usb_cstd_iSndMsg
+L17:	; return
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\usb_int.c",93
+		RTSD #04H, R6-R6
+		.END

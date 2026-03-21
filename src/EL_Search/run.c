@@ -10,7 +10,6 @@
 /***********************************************************************/
 #include "iodefine.h"
 #include "mathf.h"
-#include "sci.h"
 #include "init.h"
 #include "spi.h"
 #include "parameters.h"

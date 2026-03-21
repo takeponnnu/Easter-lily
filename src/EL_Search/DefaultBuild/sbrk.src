@@ -1,0 +1,47 @@
+;RX Family C/C++ Compiler (V2.08.00 [30 Nov 2017])  11-Nov-2021 14:11:59
+
+;*** CPU TYPE ***
+
+;-ISA=RXV1
+
+;*** COMMAND PARAMETER ***
+
+;-output=src=sbrk.src
+;-isa=rxv1
+;-fpu
+;-lang=c99
+;-include=.
+;-asm_path=DefaultBuild
+;-debug
+;-nologo
+;sbrk.c
+
+		.glb	_sbrk
+		.SECTION	P,CODE
+_sbrk:
+		.STACK	_sbrk=4
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\sbrk.c",45
+		MOV.L #__$brk, R14
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\sbrk.c",49
+		MOV.L [R14], R15
+		MOV.L #__$heap_area, R5
+		ADD R15, R1
+		ADD #0400H, R5
+		CMP R5, R1
+		BLEU L12
+L11:	; if_break_bb
+		MOV.L #0FFFFFFFFH, R1
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\sbrk.c",57
+		RTS
+L12:	; if_else_bb
+		.LINE  "C:\Users\goda naohito\Desktop\マイクロマウス\New_mouse\program\TN_Lightsensor\sbrk.c",54
+		MOV.L R1, [R14]
+		MOV.L R15, R1
+		RTS
+		.SECTION	D,ROMDATA,ALIGN=4
+__$brk:
+		.lword	__$heap_area
+		.SECTION	B,DATA,ALIGN=4
+__$heap_area:
+		.blkl	256
+		.END
