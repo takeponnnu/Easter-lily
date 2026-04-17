@@ -1,8 +1,7 @@
-Renesas Optimizing Linker (W3.03.00 )             21-Mar-2026 16:37:37
+Renesas Optimizing Linker (W3.07.00 )             29-Mar-2026 08:18:57
 
 *** Options ***
 
--MAKEUD=DefaultBuild\EasterLily_ver1.0.lk.ud
 -subcommand=DefaultBuild\EasterLily_ver1.0.clnk
 -library=DefaultBuild\EasterLily_ver1.0.lib
 -input=DefaultBuild\interrupt.obj
@@ -80,17 +79,17 @@ D_2
 D
                                   fffc08dc  fffc0977        9c   4
 P
-                                  fffc0978  fffccacc      c155   1
+                                  fffc0978  fffccac3      c14c   1
 PIntPRG
-                                  fffccacd  fffcccca       1fe   1
+                                  fffccac4  fffcccc1       1fe   1
 W_1
-                                  fffccccb  fffcccd2         8   1
+                                  fffcccc2  fffcccc9         8   1
 W_2
-                                  fffcccd4  fffccd51        7e   2
+                                  fffcccca  fffccd47        7e   2
 W
-                                  fffccd54  fffccd54         0   4
+                                  fffccd48  fffccd48         0   4
 L
-                                  fffccd54  fffcd05d       30a   4
+                                  fffccd48  fffcd051       30a   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 $ADDR_C_FFFFFFA0

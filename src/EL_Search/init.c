@@ -50,10 +50,10 @@ void init_clock(void)
 void init_io(void)
 {
 	//LED
-	PORTB.PDR.BIT.B0 = IO_OUT;//LED0 Blue
-	PORTA.PDR.BIT.B0 = IO_OUT;//LED1 Blue
-	PORTB.PDR.BIT.B1 = IO_OUT;//LED2 Blue
-	PORT0.PDR.BIT.B5 = IO_OUT;//LED3 Blue
+	PORTA.PDR.BIT.B3 = IO_OUT;//LED0 Blue
+	PORTC.PDR.BIT.B3 = IO_OUT;//LED1 Blue
+	PORTB.PDR.BIT.B7 = IO_OUT;//LED2 Blue
+	PORT5.PDR.BIT.B5 = IO_OUT;//LED3 Blue
 
 	//Sensor
 	PORTB.PDR.BIT.B6 = IO_OUT;//S_LED
@@ -300,7 +300,7 @@ void init_enc_r(int x){
 	if( x == 0 ){
 		p_enc_r++;
 	
-		if( p_enc_r == 512 ){
+		if( p_enc_r == 4096 ){
 			p_enc_r = 0;
 			R++;
 		}
@@ -310,13 +310,13 @@ void init_enc_r(int x){
 		CLR(TPU1,TCI1U) =1;
 		p_enc_r--;
 		
-		if( p_enc_r == -512 ){
+		if( p_enc_r == -4096 ){
 			p_enc_r = 0;
 			R--;
 		}
 	}
 		
-	enc_r = p_enc_r + 512*R;
+	enc_r = p_enc_r + 4096*R;
 	//TPU1.TCNT = 0;
 }
 

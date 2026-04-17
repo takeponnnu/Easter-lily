@@ -577,7 +577,7 @@ void main(void)
 		}
 			Wait_KeyOff();
 			for(i = 0; i < 100*1000*10; i++);
-			beep(mode); 
+			beep(mode);
 		}
 		LED(mode);
 		

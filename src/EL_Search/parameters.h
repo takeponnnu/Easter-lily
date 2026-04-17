@@ -6,11 +6,11 @@
 //物理的なパラメータ
 #define TIRE_DIAMETER	(24.65)				//タイヤの直径	[mm]
 #define TIRE_RADIUS	(TIRE_DIAMETER/2.0)			//タイヤの半径	[mm]
-#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*5)	//エンコーダ1パルスあたりに進む距離[mm](TIRE_DIAMETER*PI)/(ENC_MAX) ギア比もかけてる 8:40 = 1:5
-#define ENC_RES_MAX	(2048)				// 軸が1回転する時に数えられるパルス量 512*4逓倍=2048
-#define ENC_RES_HALF	(1024)
+#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*(18.0/5.0))	//エンコーダ1パルスあたりに進む距離[mm](TIRE_DIAMETER*PI)/(ENC_MAX) ギア比もかけてる 10:36 = 5:18
+#define ENC_RES_MAX	(4096)				// 軸が1回転する時に数えられるパルス量
+#define ENC_RES_HALF	(2048)
 
-#define V_ref		3.8				//モータ制御の基準電圧		HMから変えてない
+#define V_ref		3.8				//モータ制御の基準電圧		HMから変えてない 
 
 //ログ用のパラメータ
 #define LOG_CNT		1000				//ログをとる個数。 1mmsで取得しているので、取得時間[s]はこの数の1000分の1
@@ -23,7 +23,7 @@
 
 #define TH_SEN_R	1000				//壁があるか否かの閾値	車体を区画の左へ寄せた時のセンサ値(壁あり)
 #define TH_SEN_L	1000				//壁があるか否かの閾値	車体を区画の右へ寄せた時のセンサ値(壁あり)
-#define TH_SEN_FR	600				//壁があるか否かの閾値	
+#define TH_SEN_FR	600				//壁があるか否かの閾値
 #define TH_SEN_FL	480				//壁があるか否かの閾値
 
 #define RIGHT_90	914				//前壁での距離調整

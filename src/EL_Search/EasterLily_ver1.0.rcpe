@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <MicomToolCommonProjectFile Version="1.00">
-  <CreatorType Name="CubeSuite+" Version="V8.05.00  [26 Nov 2020]" />
+  <CreatorType Name="CubeSuite+" Version="V8.14.00  [02 Jun 2025]" />
   <Placeholders>
     <PlaceholderPrefix>%</PlaceholderPrefix>
     <PlaceholderPostfix>%</PlaceholderPostfix>
@@ -56,7 +56,7 @@
       <DebugToolSettings />
     </DebugOptions>
     <Device Series="RX">R5F5631MDxFM</Device>
-    <BuildOptions Name="CC-RX" Version="V3.03.00">
+    <BuildOptions Name="CC-RX" Version="V3.07.00">
       <BuildMode Name="DefaultBuild" Active="True">
         <GeneralOptions>
           <SimultaneouslyBuild>true</SimultaneouslyBuild>
@@ -66,17 +66,17 @@
           <Option>-fpu</Option>
           <Option>-lang=c99</Option>
           <Option>-include=.</Option>
-          <Option>-output=obj</Option>
           <Option>-debug</Option>
           <Option>-g_line</Option>
           <Option>-optimize=0</Option>
           <Option>-nologo</Option>
+          <Option>-output=obj</Option>
         </CompileOptions>
         <AssembleOptions>
           <Option>-isa=rxv1</Option>
           <Option>-fpu</Option>
-          <Option>-output=%BuildModeName%\%FileLeaf%.obj</Option>
           <Option>-nologo</Option>
+          <Option>-output=%BuildModeName%\%FileLeaf%.obj</Option>
           <Option>-debug</Option>
         </AssembleOptions>
         <LinkOptions>

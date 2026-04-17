@@ -12,10 +12,10 @@ extern wait_ms(int wtime);
 
 void LED(short led_data){
 	
-	LED1 = led_data&0x01;
-	LED3 = (led_data>>1)&0x01;
-	LED4 = (led_data>>2)&0x01;
-	LED2 = (led_data>>3)&0x01;
+	LED0 = led_data&0x01;
+	LED1 = (led_data>>1)&0x01;
+	LED2 = (led_data>>2)&0x01;
+	LED3 = (led_data>>3)&0x01;
 }
 
 void BEEP(void){
