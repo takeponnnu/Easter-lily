@@ -6,14 +6,14 @@
 //物理的なパラメータ
 #define TIRE_DIAMETER	(24.65)				//タイヤの直径	[mm]
 #define TIRE_RADIUS	(TIRE_DIAMETER/2.0)			//タイヤの半径	[mm]
-#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*(18.0/5.0))	//エンコーダ1パルスあたりに進む距離[mm](TIRE_DIAMETER*PI)/(ENC_MAX) ギア比もかけてる 10:36 = 5:18
+#define MMPP 		(TIRE_DIAMETER*PI)/(ENC_RES_MAX*(18.0/5.0))	//エンコーダ1パルスあたりに進む距離[mm]((TIRE_DIAMETER*PI)/(ENC_MAX) * ギア比)もかけてる 10:36 = 5:18
 #define ENC_RES_MAX	(4096)				// 軸が1回転する時に数えられるパルス量
 #define ENC_RES_HALF	(2048)
 
 #define V_ref		3.8				//モータ制御の基準電圧		HMから変えてない 
 
 //ログ用のパラメータ
-#define LOG_CNT		1000				//ログをとる個数。 1mmsで取得しているので、取得時間[s]はこの数の1000分の1
+#define LOG_CNT		1000				//ログをとる個数。 1msで取得しているので、取得時間[s]はこの数の1000分の1
 
 //センサ関連パラメータ
 #define WAITLOOP_SLED	180				//LEDを光らせてからAD変換を開始するまでの時間稼ぎ用定数
